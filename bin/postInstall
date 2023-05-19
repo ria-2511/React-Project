@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+const childProcess = require("child_process")
+
+;[
+  { command: "npx patch-package" },
+]
+  .forEach((commandAndOptions) => {
+    const { command, onlyPlatform: _, ...options } = commandAndOptions
+    try {
+      childProcess.execSync(command, {
+        stdio: "inherit",
+        ...options,
+      })
+    } catch (error) {
+      process.exit(error.status)
+    }
+  })
