@@ -2,19 +2,34 @@ import NavBar from "components/NavBar/NavBar"
 import { Card } from "react-bootstrap"
 import { collections } from "../../data/collection"
 import "./MainPage.scss"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Product from "components/Product/Product"
 import { productType } from "data/product"
+import { useNavigate } from "react-router"
 
 const MainPage = () => {
   const [isProductClicked, setIsProductClicked] = useState<boolean>(false)
   const [selectedProduct, setSelectedProduct] = useState<productType | undefined>()
+  const navigate = useNavigate()
+
   const handleProductClick = (event: any) => {
-    const selectedProductId = event.target.id
-    const selectedProduct = collections.find((item: productType) => item.id === Number(selectedProductId))
+    const productId = event.target.id
+    const selectedProduct = collections.find((item: productType) => item.id === Number(productId))
     setSelectedProduct(selectedProduct)
     setIsProductClicked(true)
   }
+
+  useEffect(() => {
+    if (selectedProduct && selectedProduct.productId) {
+      navigate(
+        {
+          pathname: `/`,
+          search: `?productId=${selectedProduct.productId}`,
+        },
+        { replace: true },
+      )
+    }
+  }, [selectedProduct])
 
   return (
     <div className="container">

@@ -4,7 +4,7 @@
  *
  */
 import { ApisauceInstance, create } from "apisauce"
-import { Console, isDev, loadString, remove } from "utils"
+import { Console } from "utils"
 import type { ApiConfig } from "./api.types"
 
 /**

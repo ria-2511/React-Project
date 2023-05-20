@@ -3,9 +3,19 @@ import "./NavBar.scss"
 import SortDropdown from "components/SortDropdown/SortDropdown"
 import { navBarPropsType } from "./NavBar.types"
 import Icon from "components/Icon/Icon"
+import { useNavigate } from "react-router"
 
 const NavBar = (props: navBarPropsType) => {
   const { isDashBoard } = props
+  const navigate = useNavigate()
+  const onBackBtnClick = () => {
+    navigate(
+      {
+        pathname: "/",
+      },
+      { replace: true },
+    )
+  }
   return (
     <div className="navBar">
       {!isDashBoard ? (
@@ -19,7 +29,9 @@ const NavBar = (props: navBarPropsType) => {
           <SortDropdown text="Sample" />
         </div>
       ) : (
-        <Icon iconName="backBtn" />
+        <div onClick={onBackBtnClick}>
+          <Icon iconName="backBtn" />
+        </div>
       )}
     </div>
   )
