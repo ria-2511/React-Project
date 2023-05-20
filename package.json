@@ -1,8 +1,11 @@
 {
   "private": true,
   "name": "react-project",
+  "homepage": "https://ria-2511.github.io/React-Project",
   "version": "0.1.0",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "build": "npm-run-all --sequential build:react",
     "build:react": "node bin/dotenv.js & cross-env GENERATE_SOURCEMAP=false react-app-rewired build",
     "format": "prettier --write \"src/**/*.{js,jsx,json,md,ts,tsx}\" && prettier-package-json --write ./package.json",
@@ -25,6 +28,7 @@
     "dayjs": "^1.11.7",
     "dotenv": "^16.0.3",
     "expo-localization": "^12.0.1",
+    "gh-pages": "^5.0.0",
     "i18n-js": "3.8.0",
     "lodash": "^4.17.21",
     "node-sass": "7.0.1",
@@ -77,9 +81,9 @@
     "react-scripts": "^5.0.1",
     "sass": "^1.52.3",
     "sass-loader": "10.0.2",
-    "style-loader": "1.2.1",
     "solidarity": "^3.0.4",
     "source-map-explorer": "^2.5.3",
+    "style-loader": "1.2.1",
     "typescript": "4.5.5",
     "webpack": "^5.69.1"
   },
