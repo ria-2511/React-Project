@@ -1,0 +1,13 @@
+.typeFilter {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    .icon {
+        padding-top: 8px;
+    }
+
+    .option {
+        padding: 50px;
+    }
+}

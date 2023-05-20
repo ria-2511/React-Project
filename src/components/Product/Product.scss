@@ -1,0 +1,25 @@
+.product {
+  display: flex;
+  justify-content: flex-start;
+  .productImg {
+    height: 45rem;
+    padding: 20px;
+  }
+  .productDetails {
+    padding: 20px;
+    .productSeller {
+      font-size: large;
+      font-weight: bold;
+      padding: 10px;
+    }
+    .productName {
+      font-size: medium;
+      color: gray;
+      padding: 10px;
+    }
+    .productDescription {
+      font-size: medium;
+      padding: 10px;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.mainPage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .mainCardStyle {
+    margin: 25px;
+
+    .carImg {
+      cursor: pointer;
+    }
+
+    .cardName {
+      font-weight: 200;
+    }
+
+    .classText {
+      display: flex;
+      justify-content: flex-start;
+      .cardListedPrice {
+        padding-right: 10px;
+        font-size: small;
+        font-weight: 600;
+      }
+      .cardMrp {
+        padding-right: 10px;
+        margin-top: 2px;
+        font-size: x-small;
+        font-weight: 300;
+        text-decoration: line-through;
+        color: gray;
+      }
+      .cardDiscount {
+        margin-top: 2px;
+        font-size: x-small;
+        color: red;
+      }
+    }
+  }
+}
