@@ -1,4 +1,4 @@
 export type TypeFilterPropTypes = {
-    text : string;
-    options : string[];
+  text: string
+  options: string[]
 }

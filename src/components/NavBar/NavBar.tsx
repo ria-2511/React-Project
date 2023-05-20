@@ -4,10 +4,15 @@ import SortDropdown from "components/SortDropdown/SortDropdown"
 import { navBarPropsType } from "./NavBar.types"
 import Icon from "components/Icon/Icon"
 import { useNavigate } from "react-router"
+import { collections } from "data/collection"
+import { productType } from "data/product"
 
 const NavBar = (props: navBarPropsType) => {
   const { isDashBoard } = props
   const navigate = useNavigate()
+  const supplierOptions = Array.from(new Set(collections.map((item: productType) => item.supplierName)))
+  const sareeFabricOptions = Array.from(new Set(collections.map((item: productType) => item.sareeFabric)))
+
   const onBackBtnClick = () => {
     navigate(
       {
@@ -22,8 +27,8 @@ const NavBar = (props: navBarPropsType) => {
         <div className="navBarDashboard">
           {/* filter buttons */}
           <div className="filterButton">
-            <TypeFilter text="Saree Type" options={["handle", "sample"]} />
-            <TypeFilter text="Saree Type" options={["handle", "sample"]} />
+            <TypeFilter text="Suppliers" options={supplierOptions} />
+            <TypeFilter text="Saree Fabric" options={sareeFabricOptions} />
           </div>
           {/* sort Dropdown */}
           <SortDropdown text="Sample" />

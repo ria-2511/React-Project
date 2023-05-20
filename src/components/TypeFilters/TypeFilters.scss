@@ -1,13 +1,22 @@
 .typeFilter {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
+  position: relative;
+  margin-top: 20px;
+  margin-right: 30px;
+  display: flex;
+  justify-content: space-between;
 
-    .icon {
-        padding-top: 8px;
-    }
+  .icon {
+    padding-top: 8px;
+  }
+}
 
-    .option {
-        padding: 50px;
+.optionsSet {
+  display: flex;
+  justify-content: flex-start;
+  .option {
+    padding: 15px;
+    .labelClass {
+      padding-left: 5px;
     }
+  }
 }

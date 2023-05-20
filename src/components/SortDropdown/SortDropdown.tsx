@@ -1,11 +1,12 @@
 import { Dropdown } from "react-bootstrap"
+import "./SortDropdown.scss"
 import { SortDropdownPropsType } from "./SortDropdown.types"
 
 const SortDropdown = (props: SortDropdownPropsType) => {
   return (
     <div>
       <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
+        <Dropdown.Toggle className="dropdown" variant="secondary">
           {props.text}
         </Dropdown.Toggle>
 
