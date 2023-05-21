@@ -1,12 +1,13 @@
 .navBar {
-  display: flex;
   .navBarDashboard {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-  .filterButton {
-    display: flex;
-    justify-content: start;
+    .filters {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .filterButton {
+      display: flex;
+      justify-content: flex-start;
+    }
   }
 }

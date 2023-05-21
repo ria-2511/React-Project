@@ -1,4 +1,3 @@
-import NavBar from "components/NavBar/NavBar"
 import { Card } from "react-bootstrap"
 import { collections } from "../../data/collection"
 import "./MainPage.scss"
@@ -6,8 +5,9 @@ import { useEffect, useState } from "react"
 import Product from "components/Product/Product"
 import { productType } from "data/product"
 import { useNavigate } from "react-router"
+import { MainPageProps } from "./MainPage.types"
 
-const MainPage = () => {
+const MainPage = ({ dataToShow = collections }: MainPageProps) => {
   const [isProductClicked, setIsProductClicked] = useState<boolean>(false)
   const [selectedProduct, setSelectedProduct] = useState<productType | undefined>()
   const navigate = useNavigate()
@@ -33,7 +33,6 @@ const MainPage = () => {
 
   return (
     <div className="container">
-      <NavBar isDashBoard={isProductClicked} />
       {isProductClicked && selectedProduct ? (
         <div>
           <Product selectedProduct={selectedProduct} />
@@ -41,7 +40,7 @@ const MainPage = () => {
       ) : (
         <div className="mainPage">
           {/* Main Page Map */}
-          {collections.map((option: productType) => {
+          {dataToShow.map((option: productType) => {
             return (
               <div id={`${option.id}`} key={option.id}>
                 <Card style={{ width: "14rem" }} id={`${option.id}`} className="border-light mainCardStyle">

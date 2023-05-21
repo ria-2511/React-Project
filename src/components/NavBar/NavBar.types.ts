@@ -1,3 +1,3 @@
 export type navBarPropsType = {
-  isDashBoard: boolean
+  setDataToShow?: (data: any) => void
 }

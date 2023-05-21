@@ -16,7 +16,18 @@
   .option {
     padding: 15px;
     .labelClass {
-      padding-left: 5px;
+      margin-right: 5px;
     }
+  }
+}
+
+.functionBtns {
+  display: flex;
+  justify-content: flex-start;
+  .filterClick {
+    text-decoration: underline;
+    color: red;
+    padding-left: 10px;
+    cursor: pointer;
   }
 }
