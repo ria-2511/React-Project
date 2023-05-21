@@ -23,7 +23,7 @@ const MainPage = ({ dataToShow = collections }: MainPageProps) => {
     if (selectedProduct && selectedProduct.productId) {
       navigate(
         {
-          pathname: `/`,
+          pathname: `/React-Project/`,
           search: `?productId=${selectedProduct.productId}`,
         },
         { replace: true },
